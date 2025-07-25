@@ -1,7 +1,7 @@
 'use client';
 import { useRef } from 'react';
 import Image from 'next/image';
-import { FiArrowRight, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const testimonials = [
   {

@@ -9,10 +9,10 @@ const WhyUsSection = () => {
       <div className="md:w-1/3 mb-10 md:mb-0">
         <h2 className="text-4xl font-bold mb-6">Why Us</h2>
         <p className="text-gray-600 leading-relaxed mb-4">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text.
         </p>
         <p className="text-gray-600 leading-relaxed">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text.
         </p>
       </div>
 

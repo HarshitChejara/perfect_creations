@@ -67,7 +67,7 @@ const ProjectsSection = () => {
             <h3 className="text-xl font-semibold mb-2">Project Name</h3>
             <p className="text-sm text-gray-600 mb-4">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text.
+              industrys standard dummy text.
             </p>
           </div>
           <div className="text-sm text-gray-800">

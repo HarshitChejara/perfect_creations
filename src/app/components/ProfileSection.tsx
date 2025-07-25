@@ -32,11 +32,11 @@ const ProfileSection = () => {
           <div>
             <p className="text-gray-600 text-sm mb-4">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text.
+              industrys standard dummy text.
             </p>
             <p className="text-gray-600 text-sm">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text
+              industrys standard dummy text
             </p>
           </div>
 
