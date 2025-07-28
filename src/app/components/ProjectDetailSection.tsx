@@ -37,9 +37,7 @@ const ProjectDetailSection: React.FC = () => {
           </p>
         </div>
         <div className="text-right">
-          <button className="border border-gray-300 px-4 py-2 text-sm rounded hover:bg-gray-100">
-            Image ▼
-          </button>
+          <button className="border border-gray-300 px-4 py-2 text-sm rounded hover:bg-gray-100">Image ▼</button>
         </div>
       </div>
 
