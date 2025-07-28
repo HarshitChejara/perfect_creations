@@ -6,11 +6,11 @@ import Image from 'next/image';
 
 const About = () => {
   return (
-    <><div className="min-h-screen lg:mt-44 px-6 md:px-16 bg-white text-black">
+    <><div className="min-h-screen mt-44 px-6 md:px-16 bg-white text-black">
       {/* Section Top */}
       <div className="grid md:grid-cols-2 gap-16">
         <div>
-          <p className="tracking-widest text-sm mb-4">CATALOG</p>
+          <p className="tracking-widest text-sm mb-4">ABOUT US</p>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">
             Interior design <br />
             that matters.

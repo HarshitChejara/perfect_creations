@@ -44,7 +44,7 @@ const Testimonials = () => {
 
   return (
     <section className="bg-white py-24">
-      <div className="relative max-w-7xl mx-auto overflow-hidden px-4 sm:px-8">
+      <div className="relative px-4 md:px-20">
         {/* Scrollable container */}
         <div
           ref={sliderRef}
@@ -100,34 +100,19 @@ const Testimonials = () => {
                     </p>
                   </div>
                 </div>
+                <div className="absolute right-4 flex gap-4 py-8 px-4 md:px-20">
+                  <button onClick={() => handleScroll('left')}>
+                    <FiChevronLeft size={40} />
+                  </button>
+                  <button onClick={() => handleScroll('right')}>
+                    <FiChevronRight size={40} />
+                  </button>
+                </div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Navigation Arrows */}
-        <button
-          onClick={() => handleScroll('left')}
-          className="absolute top-1/2 left-2 transform -translate-y-1/2 z-10 bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-full"
-        >
-          &#8592;
-        </button>
-        <button
-          onClick={() => handleScroll('right')}
-          className="absolute top-1/2 right-2 transform -translate-y-1/2 z-10 bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-full"
-        >
-          &#8594;
-        </button>
       </div>
-
-       <div className="absolute bottom-0 right-4 flex gap-4 mt-4">
-                <button onClick={() => handleScroll('left')} className="p-2 border border-gray-300 rounded-full hover:bg-black hover:text-white transition">
-                  <FiChevronLeft size={20} />
-                </button>
-                <button onClick={() => handleScroll('right')} className="p-2 border border-gray-300 rounded-full hover:bg-black hover:text-white transition">
-                  <FiChevronRight size={20} />
-                </button>
-              </div>
     </section>
   );
 };

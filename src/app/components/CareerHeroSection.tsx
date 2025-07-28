@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const CareerHeroSection = () => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-4 md:px-12 mb-16 lg:mt-44">
+    <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-4 md:px-16 mb-16 mt-44">
       {/* Left Column */}
       <div className="flex flex-col justify-between">
         <div>

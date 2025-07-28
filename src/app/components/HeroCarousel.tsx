@@ -4,7 +4,7 @@ const HeroCarousel = () => {
   return (
     <section
       className="relative h-screen w-full bg-cover bg-center"
-      style={{ backgroundImage: `url('/hero-bg.jpeg')` }}
+      style={{ backgroundImage: `url('./hero-bg.jpeg')` }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>

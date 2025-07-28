@@ -22,7 +22,7 @@ const RecentWorks = () => {
   };
 
   return (
-    <section className="py-16 px-4 md:px-16 bg-white overflow-hidden">
+    <section className="py-16 px-4 md:px-20 bg-white overflow-hidden">
       <h2 className="text-3xl md:text-5xl font-bold mb-12">Recent Works</h2>
 
       <div className="relative">

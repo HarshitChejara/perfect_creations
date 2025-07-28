@@ -57,7 +57,7 @@ const projects = [
 
 const AllProjectsSection = () => {
   return (
-    <section className="px-4 md:px-10 py-16 lg:mt-24">
+    <section className="px-4 md:px-16 py-16 mt-24">
       <div className="flex flex-col md:flex-row">
         {/* Left Sidebar */}
         <aside className="md:w-1/4 mb-10 md:mb-0">

@@ -4,7 +4,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
 
 const ContactSection = () => {
   return (
-    <section className="w-full px-6 md:px-16 mb-12 lg:mt-24">
+    <section className="w-full px-6 md:px-16 mb-12 mt-24">
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Left: Contact Form */}
         <div className="lg:w-1/3">
