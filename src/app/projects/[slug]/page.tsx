@@ -21,17 +21,18 @@
 // }
 import React from 'react';
 
-type Props = {
+type PageProps = {
   params: {
     slug: string;
   };
 };
 
-const ProjectPage = ({ params }: Props) => {
+const ProjectPage = async ({ params }: PageProps) => {
+  const { slug } = params;
+
   return (
     <div>
-      <h1>Project: {params.slug}</h1>
-      {/* your content here */}
+      <h1>Project: {slug}</h1>
     </div>
   );
 };
