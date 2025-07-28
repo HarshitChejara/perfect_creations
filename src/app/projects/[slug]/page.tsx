@@ -19,3 +19,21 @@
 //     </main>
 //   );
 // }
+import React from 'react';
+
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+const ProjectPage = ({ params }: Props) => {
+  return (
+    <div>
+      <h1>Project: {params.slug}</h1>
+      {/* your content here */}
+    </div>
+  );
+};
+
+export default ProjectPage;
