@@ -21,13 +21,13 @@
 // }
 import React from 'react';
 
-type PageProps = {
+interface PageProps {
   params: {
     slug: string;
   };
-};
+}
 
-const ProjectPage = async ({ params }: PageProps) => {
+const ProjectPage = ({ params }: PageProps) => {
   const { slug } = params;
 
   return (
