@@ -18,7 +18,7 @@ const EmployeeWorkspaceGallery = () => {
               alt={image.alt}
               layout="fill"
               objectFit="cover"
-              className="rounded-md"
+              // className="rounded-md"
             />
             <div className="absolute inset-0 bg-black/30 flex flex-col justify-center items-center text-white text-center">
               <p className="uppercase text-sm tracking-widest">SNS Business Hub</p>

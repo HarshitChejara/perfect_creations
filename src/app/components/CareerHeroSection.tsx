@@ -26,7 +26,7 @@ const CareerHeroSection = () => {
           alt="Office"
           width={500}
           height={300}
-          className="rounded-md mb-6"
+          className=" mb-6"
         />
         <p className="text-gray-600 text-center max-w-sm">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text.

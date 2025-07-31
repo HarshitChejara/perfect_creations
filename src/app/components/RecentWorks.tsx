@@ -31,7 +31,7 @@ const RecentWorks = () => {
           {items.map((item, index) => (
             <div
               key={item.id}
-              className={`min-w-[300px] transition-all duration-300 rounded-lg relative group ${
+              className={`min-w-[300px] transition-all duration-300 relative group ${
                 index === activeIndex
                   ? 'scale-105 shadow-xl z-10'
                   : 'opacity-40'
@@ -39,7 +39,7 @@ const RecentWorks = () => {
             >
               {/* Card Image */}
               <div
-                className={`aspect-[3/4] bg-cover bg-center rounded-lg overflow-hidden relative`}
+                className={`aspect-[3/4] bg-cover bg-center overflow-hidden relative`}
                 style={{ backgroundImage: `url(${item.image})` }}
               >
                 {/* Overlay */}

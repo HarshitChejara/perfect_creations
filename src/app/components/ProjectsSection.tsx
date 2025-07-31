@@ -19,7 +19,7 @@ const ProjectsSection = () => {
             alt="Project Image 1"
             layout="fill"
             objectFit="cover"
-            className="rounded-md"
+            // className="rounded-md"
           />
         </div>
         <div className="w-full h-[250px] md:h-[300px] relative">
@@ -28,7 +28,7 @@ const ProjectsSection = () => {
             alt="Project Image 2"
             layout="fill"
             objectFit="cover"
-            className="rounded-md"
+            // className="rounded-md"
           />
         </div>
 
@@ -50,7 +50,7 @@ const ProjectsSection = () => {
             alt="Project Detail 1"
             layout="fill"
             objectFit="cover"
-            className="rounded-md"
+            // className="rounded-md"
           />
         </div>
         <div className="relative w-full h-[250px]">
@@ -59,7 +59,7 @@ const ProjectsSection = () => {
             alt="Project Detail 2"
             layout="fill"
             objectFit="cover"
-            className="rounded-md"
+            // className="rounded-md"
           />
         </div>
         <div className="flex flex-col justify-between">

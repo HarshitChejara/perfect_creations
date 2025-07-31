@@ -1,49 +1,103 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
+const contentData = [
+  {
+    title: 'Education',
+    description: 'We provide access to quality education resources tailored to your career growth.',
+    image: '/education.png',
+  },
+  {
+    title: 'Experience',
+    description: 'Gain hands-on experience through real-world projects and mentorship.',
+    image: '/workspace1.jpeg',
+  },
+  {
+    title: 'Learning',
+    description: 'Engage in continuous learning with industry-leading professionals.',
+    image: '/workspace2.jpeg',
+  },
+  {
+    title: 'Community',
+    description: 'Join a thriving community of learners, mentors, and professionals.',
+    image: '/workspace3.jpeg',
+  },
+  {
+    title: 'Job Training',
+    description: 'Get job-ready with practical training and placement support.',
+    image: '/education.png',
+  },
+];
+
 const WhyUsSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute('data-index'));
+            setActiveIndex(index);
+          }
+        });
+      },
+      { rootMargin: '-30% 0px -50% 0px', threshold: 0.5 }
+    );
+
+    itemRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="w-full flex flex-col md:flex-row items-start justify-center py-16 px-4 md:px-20 bg-white">
-      {/* Left Text Block */}
-      <div className="md:w-1/3 mb-10 md:mb-0">
+      <div className="md:w-1/3 mb-10 md:mb-0 sticky top-20">
         <h2 className="text-4xl font-bold mb-6">Why Us</h2>
         <p className="text-gray-600 leading-relaxed mb-4">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text.
-        </p>
-        <p className="text-gray-600 leading-relaxed">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text.
+          {contentData[activeIndex].description}
         </p>
       </div>
 
-      {/* Center Image */}
-      <div className="md:w-1/3 flex justify-center mb-10 md:mb-0">
+      <div className="md:w-1/3 flex justify-center mb-10 md:mb-0 sticky top-20">
         <Image
-          src="/education.png" // Make sure this image exists in your /public folder
-          alt="Office planning"
+          src={contentData[activeIndex].image}
+          alt={contentData[activeIndex].title}
           width={400}
           height={300}
-          className="rounded-md object-cover"
+          className="object-cover"
         />
       </div>
 
-      {/* Right List */}
-      <div className="md:w-1/3">
-        <ul className="space-y-6 text-lg">
-          {['Education', 'Experience', 'Learning', 'Community', 'Job Training'].map((item, index) => (
-            <li
-              key={index}
+      <div className="md:w-1/3 space-y-14">
+        {contentData.map((item, index) => (
+          <div
+            key={index}
+            ref={(el) => { itemRefs.current[index] = el; }}
+            data-index={index}
+            className="min-h-[50px] scroll-mt-24"
+          >
+            <div
               className={`flex items-center gap-4 ${
-                index === 0 ? 'text-black font-semibold' : 'text-gray-400'
+                index === activeIndex ? 'text-black font-semibold' : 'text-gray-400'
               }`}
             >
-              <span className={`text-xl font-bold ${index === 0 ? 'text-black' : 'text-gray-300'}`}>
+              <span
+                className={`font-bold ${
+                  index === activeIndex ? 'text-black text-4xl' : 'text-gray-300 text-xl'
+                }`}
+              >
                 {`0${index + 1}`}
               </span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
+              <span>{item.title}</span>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

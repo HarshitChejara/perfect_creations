@@ -62,7 +62,7 @@ const Testimonials = () => {
                   alt="Client Room"
                   width={600}
                   height={400}
-                  className="rounded-lg w-full h-auto object-cover"
+                  className="w-full h-auto object-cover"
                 />
               </div>
 

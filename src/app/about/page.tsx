@@ -1,5 +1,6 @@
 'use client';
 
+import ProfileSection from 'app/components/ProfileSection';
 import ProjectsShowcase from 'app/components/ProjectsShowcase';
 import TeamSection from 'app/components/TeamSection';
 import Image from 'next/image';
@@ -59,7 +60,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="bg-[#f9f9f9] p-6 rounded-lg">
+          <div className="bg-[#f9f9f9] p-6">
             <h2 className="text-xl font-semibold">Lorem ipsum dummy text</h2>
             <p className="text-sm text-gray-600 mt-2">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -67,7 +68,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+          <div className="relative w-full h-64 md:h-80 overflow-hidden shadow-lg">
             <Image
               src="/about_image.png"
               alt="Office Design"
@@ -77,6 +78,7 @@ const About = () => {
         </div>
       </div>
     </div>
+    <ProfileSection/>
     <TeamSection />
     <ProjectsShowcase />
     </>

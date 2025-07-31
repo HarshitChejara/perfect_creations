@@ -3,7 +3,7 @@
 const CorporateClients = () => {
   return (
     <section className="bg-[#f6f8fc] py-12 px-6 md:px-20">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto">
         {/* Title */}
         <div className="flex items-center justify-start gap-4 mb-10">
           <h3 className="text-xs tracking-widest text-gray-500 uppercase">Corporate Clients</h3>
