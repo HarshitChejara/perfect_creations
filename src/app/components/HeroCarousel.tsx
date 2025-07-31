@@ -20,14 +20,15 @@ const HeroCarousel = () => {
   }, []);
 
   // Animation Variants
-  const slideUp: Variants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.8, ease: 'easeOut' as any },
-    },
-  };
+const slideUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: 'easeOut' },
+  },
+};
+
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
