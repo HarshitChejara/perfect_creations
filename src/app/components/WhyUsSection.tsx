@@ -74,7 +74,7 @@ const WhyUsSection = () => {
         />
       </div>
 
-      <div className="md:w-1/3 space-y-14">
+      <div className="md:w-1/3 space-y-7">
         {contentData.map((item, index) => (
           <div
             key={index}
@@ -84,7 +84,7 @@ const WhyUsSection = () => {
           >
             <div
               className={`flex items-center gap-4 ${
-                index === activeIndex ? 'text-black font-semibold' : 'text-gray-400'
+                index === activeIndex ? 'text-black font-semibold text-xl' : 'text-gray-400'
               }`}
             >
               <span

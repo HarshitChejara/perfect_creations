@@ -13,7 +13,7 @@ const Contact = () => {
 
       <div className="relative z-10 px-20 py-16 flex flex-col md:flex-row items-center">
         {/* Left Section */}
-        <div className="md:w-1/2 w-full text-white space-y-6">
+        <div className="w-full text-white space-y-6">
           <p className="tracking-widest text-sm uppercase">Get in Touch</p>
           <h2 className="text-4xl font-bold">Contact Us</h2>
           <p className="text-lg">

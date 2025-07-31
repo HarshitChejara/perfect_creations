@@ -48,7 +48,7 @@ const Testimonials = () => {
         {/* Scrollable container */}
         <div
           ref={sliderRef}
-          className="flex overflow-x-auto scroll-smooth gap-16 no-scrollbar"
+          className="flex overflow-x-auto scroll-smooth no-scrollbar"
         >
           {testimonials.map((testimonial, index) => (
             <div
@@ -71,15 +71,15 @@ const Testimonials = () => {
                 <p className="text-xs tracking-widest uppercase text-gray-500 mb-2">
                   What Clients Says
                 </p>
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-4xl font-bold text-gray-900 mb-12">
                   Testimonials
                 </h2>
-                <p className="text-gray-700 text-lg italic relative pl-10 mb-8 leading-relaxed">
-                  <span className="absolute left-0 top-0 text-4xl text-gray-300 leading-none">
+                <p className="text-gray-700 text-lg italic relative pl-10 mb-12 leading-relaxed">
+                  <span className="absolute left-0 top-0 text-7xl text-gray-300 leading-none">
                     “
                   </span>
                   {testimonial.quote}
-                  <span className="absolute right-0 bottom-0 text-4xl text-gray-300 leading-none">
+                  <span className="absolute text-7xl text-gray-300 leading-none">
                     ”
                   </span>
                 </p>
