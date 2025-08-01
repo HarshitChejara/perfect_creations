@@ -2,6 +2,7 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { motion, Variants } from 'framer-motion';
 
 const testimonials = [
   {
@@ -11,14 +12,8 @@ const testimonials = [
     clientImage: '/client-avatar.png',
     clientName: 'Name Of Project / Client',
     clientTitle: 'CEO, Unity Real Estate',
-  },{
-    image: '/testimonial1.jpg',
-    quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat venenatis tempor, turpis dolor. Aliquam faucibus velit, volutpat vulputate risus. Urna enim donec sed fringilla blandit arcu mi quam semper nunc.',
-    clientImage: '/client-avatar.png',
-    clientName: 'Name Of Project / Client',
-    clientTitle: 'CEO, Unity Real Estate',
-  },{
+  },
+  {
     image: '/testimonial1.jpg',
     quote:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat venenatis tempor, turpis dolor. Aliquam faucibus velit, volutpat vulputate risus. Urna enim donec sed fringilla blandit arcu mi quam semper nunc.',
@@ -26,8 +21,25 @@ const testimonials = [
     clientName: 'Name Of Project / Client',
     clientTitle: 'CEO, Unity Real Estate',
   },
-  // Add more testimonials here if needed
+  {
+    image: '/testimonial1.jpg',
+    quote:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat venenatis tempor, turpis dolor. Aliquam faucibus velit, volutpat vulputate risus. Urna enim donec sed fringilla blandit arcu mi quam semper nunc.',
+    clientImage: '/client-avatar.png',
+    clientName: 'Name Of Project / Client',
+    clientTitle: 'CEO, Unity Real Estate',
+  },
 ];
+
+// Animation only for the section container
+const sectionSlideUp: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeInOut' },
+  },
+};
 
 const Testimonials = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -43,7 +55,13 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="bg-white py-24">
+    <motion.section
+      className="bg-white py-28"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={sectionSlideUp}
+    >
       <div className="relative px-4 md:px-20">
         {/* Scrollable container */}
         <div
@@ -113,7 +131,7 @@ const Testimonials = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
