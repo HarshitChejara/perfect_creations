@@ -31,7 +31,6 @@ const testimonials = [
   },
 ];
 
-// Animation only for the section container
 const sectionSlideUp: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
@@ -63,6 +62,14 @@ const Testimonials = () => {
       variants={sectionSlideUp}
     >
       <div className="relative px-4 md:px-20">
+        {/* Mobile Title */}
+        <div className="mb-8 md:hidden">
+          <p className="text-xs tracking-widest uppercase text-gray-500 mb-1">
+            What Clients Says
+          </p>
+          <h2 className="text-3xl font-bold text-gray-900">Testimonials</h2>
+        </div>
+
         {/* Scrollable container */}
         <div
           ref={sliderRef}
@@ -86,12 +93,16 @@ const Testimonials = () => {
 
               {/* Right Content */}
               <div className="w-full md:w-1/2 md:pl-16 mt-10 md:mt-0">
-                <p className="text-xs tracking-widest uppercase text-gray-500 mb-2">
-                  What Clients Says
-                </p>
-                <h2 className="text-4xl font-bold text-gray-900 mb-12">
-                  Testimonials
-                </h2>
+                {/* Desktop Title */}
+                <div className="hidden md:block mb-12">
+                  <p className="text-xs tracking-widest uppercase text-gray-500 mb-2">
+                    What Clients Says
+                  </p>
+                  <h2 className="text-4xl font-bold text-gray-900">
+                    Testimonials
+                  </h2>
+                </div>
+
                 <p className="text-gray-700 text-lg italic relative pl-10 mb-12 leading-relaxed">
                   <span className="absolute left-0 top-0 text-7xl text-gray-300 leading-none">
                     “
