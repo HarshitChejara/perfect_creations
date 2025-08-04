@@ -76,15 +76,19 @@ const ProfileSection = () => {
 
           {isHomePage && (
             <motion.div
-              className="mt-6 relative w-[200px] h-[120px] self-end cursor-pointer"
+              className="mt-6 relative w-[200px] h-[200px] self-end cursor-pointer"
               onClick={() => setIsModalOpen(true)}
               variants={slideUp}
+              initial="hidden"
+              whileInView="visible"
+              custom={4}
+              viewport={{ once: true }}
             >
               <Image
                 src="/video-thumb.png"
                 alt="Video Process"
-                layout="fill"
-                objectFit="cover"
+                fill
+                className="object-cover"
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <button className="bg-white bg-opacity-80 rounded-full p-2">
@@ -93,8 +97,8 @@ const ProfileSection = () => {
                   </svg>
                 </button>
               </div>
-              <p className="absolute bottom-2 left-11 -translate-x-1 text-xs text-white tracking-widest">
-                VIDEO PROCESS
+              <p className="absolute mb-5 bottom-2 left-1/2 -translate-x-1/2 text-center text-xs text-white tracking-widest whitespace-nowrap uppercase">
+                Video Process
               </p>
             </motion.div>
           )}

@@ -47,7 +47,7 @@ const slideUp: Variants = {
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col h-full justify-center px-6 md:px-16 text-white">
+      <div className="relative z-10 flex flex-col h-full justify-center px-6 md:px-20 text-white">
         {/* Heading with Slide-Up */}
         <motion.h1
           className="text-4xl md:text-6xl font-semibold leading-tight max-w-xl"

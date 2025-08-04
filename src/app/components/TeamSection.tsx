@@ -2,6 +2,16 @@
 
 import Image from 'next/image';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { motion, Variants } from 'framer-motion';
+
+const slideUpVariant: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
 
 const teamMembers = [
   {
@@ -23,13 +33,39 @@ const teamMembers = [
 
 const TeamSection = () => {
   return (
-    <section className="px-6 md:px-16 py-20 bg-white text-black">
-      <p className="uppercase text-sm tracking-widest mb-2">Our Team</p>
-      <h2 className="text-4xl font-bold mb-12">Behind the design</h2>
+    <section className="px-6 md:px-20 py-20 bg-white text-black">
+      <motion.p
+        className="uppercase text-sm tracking-widest mb-2"
+        variants={slideUpVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        Our Team
+      </motion.p>
+
+      <motion.h2
+        className="text-4xl font-bold mb-12"
+        variants={slideUpVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+      >
+        Behind the design
+      </motion.h2>
 
       <div className="grid md:grid-cols-3 gap-10">
         {teamMembers.map((member, index) => (
-          <div key={index} className="relative overflow-hidden group">
+          <motion.div
+            key={index}
+            className="relative overflow-hidden group"
+            variants={slideUpVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: 0.3 + index * 0.2 }}
+          >
             <div className="relative w-full h-[400px]">
               <Image
                 src={member.image}
@@ -37,11 +73,9 @@ const TeamSection = () => {
                 fill
                 className="object-cover"
               />
-              <div className="absolute top-4 left-4 text-white text-sm font-medium">
-                {member.name}
-              </div>
-              <div className="absolute top-4 right-4 text-white text-xs font-light">
-                {member.title}
+              <div className="absolute top-4 left-0 right-0 px-4 flex justify-between items-center text-white">
+                <span className="text-xl font-semibold">{member.name}</span>
+                <span className="text-xs font-light">{member.title}</span>
               </div>
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
                 <a
@@ -64,7 +98,7 @@ const TeamSection = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

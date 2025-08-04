@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <header
-      className={`absolute top-0 left-0 w-full z-50 px-6 md:px-16 py-6 flex items-center justify-between ${
+      className={`absolute top-0 left-0 w-full z-50 px-6 md:px-20 py-6 flex items-center justify-between ${
         isHome ? 'text-white' : 'text-black'
       }`}
     >
