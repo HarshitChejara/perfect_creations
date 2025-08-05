@@ -11,7 +11,7 @@ const items = [
 ];
 
 const RecentWorks = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(items.length); // start in middle
   const [isTransitioning, setIsTransitioning] = useState(true);
@@ -47,7 +47,7 @@ const RecentWorks = () => {
     }
   }, [currentIndex]);
 
-  // Fade-in on scroll
+  // Fade-in on scroll with fixed cleanup warning
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -56,9 +56,12 @@ const RecentWorks = () => {
       { threshold: 0.2 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    const currentSection = sectionRef.current; // capture ref to avoid cleanup warning
+
+    if (currentSection) observer.observe(currentSection);
+
     return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      if (currentSection) observer.unobserve(currentSection);
     };
   }, []);
 
