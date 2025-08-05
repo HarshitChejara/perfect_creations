@@ -1,11 +1,11 @@
 import ProjectDetailSection from "app/components/ProjectDetailSection";
 
 type ProjectDetailPageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export default function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-  const { slug } = params;
+export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
+  const { slug } = await params;
 
   return (
     <main>
