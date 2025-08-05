@@ -1,4 +1,5 @@
 'use client';
+import Link from "next/link";
 import { useState, useEffect, useRef } from 'react';
 import { FiArrowRight, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
@@ -109,8 +110,11 @@ const RecentWorks = () => {
                         <h3 className="text-2xl font-semibold leading-tight">{item.title}</h3>
                         <div className="border-t border-white my-2 w-10"></div>
                         <div className="flex items-center text-sm">
+                          {/* <Link href={`/projects/${item.id}`} className="flex items-center"> */}
+                          <Link href={`/projects`} className="flex items-center">
                           <span>More Information</span>
                           <FiArrowRight className="ml-2" />
+                          </Link>
                         </div>
                       </div>
                     )}

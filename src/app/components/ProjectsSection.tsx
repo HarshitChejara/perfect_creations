@@ -244,7 +244,7 @@ const ProjectsSection = () => {
 
       {/* Fullscreen Image Viewer */}
       {selectedImageIndex !== null && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           {/* Close Button */}
           <button
             type="button"
@@ -269,7 +269,7 @@ const ProjectsSection = () => {
               alt="Fullscreen Project Image"
               width={1200}
               height={800}
-              className="max-w-[90%] max-h-[90%] object-contain"
+              className="max-w-[100%] max-h-[100%] object-contain"
             />
           </div>
 
