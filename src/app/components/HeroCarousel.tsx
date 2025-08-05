@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
+import { useRouter } from 'next/navigation'; // ✅ Import useRouter
 
 const images = [
   './hero-bg.jpeg',
@@ -10,6 +11,7 @@ const images = [
 
 const HeroCarousel = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const router = useRouter(); // ✅ Initialize router
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,15 +22,14 @@ const HeroCarousel = () => {
   }, []);
 
   // Animation Variants
-const slideUp: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: 'easeOut' },
-  },
-};
-
+  const slideUp: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  };
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
@@ -61,6 +62,7 @@ const slideUp: Variants = {
 
         {/* Button with Slide-Up */}
         <motion.button
+          onClick={() => router.push('/contact')} // ✅ Navigate to contact page
           className="mt-8 border border-white rounded-full px-4 py-2 text-sm uppercase hover:bg-white hover:text-black transition-all whitespace-nowrap w-fit"
           initial="hidden"
           whileInView="visible"
