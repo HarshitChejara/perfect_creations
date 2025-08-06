@@ -3,158 +3,20 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const categories = [
-  "Furniture",
-  "Remote Spaces",
-  "Office Tech",
-  "Floor Plans",
-  "Organization",
-  "Interior Design",
-];
-
-const projects = [
-  {
-    slug: "project-name1",
-    title: "Project Name1",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.1",
-    category: "Floor Plans",
-    date: "4.5.21",
-    image: "/project1.png",
-  },
-  {
-    slug: "project-name2",
-    title: "Project Name2",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.2",
-    category: "Floor Plans",
-    date: "4.5.21",
-    image: "/project2.png",
-  },
-  {
-    slug: "project-name3",
-    title: "Project Name3",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.3",
-    category: "Floor Plans",
-    date: "4.5.21",
-    image: "/project3.png",
-  },
-  {
-    slug: "project-name4",
-    title: "Project Name4",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.4",
-    category: "Floor Plans",
-    date: "4.5.21",
-    image: "/project4.png",
-  },
-  {
-    slug: "project-name5",
-    title: "Project Name5",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.5",
-    category: "Remote Spaces",
-    date: "4.5.21",
-    image: "/project5.jpg",
-  },
-  {
-    slug: "project-name6",
-    title: "Project Name6",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.6",
-    category: "Remote Spaces",
-    date: "4.5.21",
-    image: "/project6.jpg",
-  },
-  {
-    slug: "project-name7",
-    title: "Project Name7",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.7",
-    category: "Office Tech",
-    date: "4.5.21",
-    image: "/project7.jpg",
-  },
-  {
-    slug: "project-name8",
-    title: "Project Name8",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.8",
-    category: "Furniture",
-    date: "4.5.21",
-    image: "/project8.jpeg",
-  },
-  {
-    slug: "project-name9",
-    title: "Project Name9",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.9",
-    category: "Furniture",
-    date: "4.5.21",
-    image: "/project9.jpeg",
-  },
-  {
-    slug: "project-name10",
-    title: "Project Name10",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.10",
-    category: "Furniture",
-    date: "4.5.21",
-    image: "/project10.jpeg",
-  },
-  {
-    slug: "project-name11",
-    title: "Project Name11",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.11",
-    category: "Furniture",
-    date: "4.5.21",
-    image: "/project11.jpeg",
-  },
-  {
-    slug: "project-name12",
-    title: "Project Name12",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.12",
-    category: "Furniture",
-    date: "4.5.21",
-    image: "/project12.jpeg",
-  },
-  {
-    slug: "project-name13",
-    title: "Project Name13",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.13",
-    category: "Furniture",
-    date: "4.5.21",
-    image: "/project13.jpeg",
-  },
-  {
-    slug: "project-name14",
-    title: "Project Name14",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.14",
-    category: "Furniture",
-    date: "4.5.21",
-    image: "/project14.jpeg",
-  },
-  {
-    slug: "project-name15",
-    title: "Project Name15",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.15",
-    category: "Interior Design",
-    date: "4.5.21",
-    image: "/project15.jpeg",
-  },
-  {
-    slug: "project-name16",
-    title: "Project Name16",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.16",
-    category: "Organization",
-    date: "4.5.21",
-    image: "/project16.jpeg",
-  },
-];
+import { projectCategories } from "data/projectsData";
 
 const AllProjectsSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Furniture");
+  const [selectedCategory, setSelectedCategory] = useState(projectCategories[0]?.name || "");
   const [visibleProjects, setVisibleProjects] = useState(6);
 
   const handleLoadMore = () => {
     setVisibleProjects((prev) => prev + 6);
   };
 
-  const filteredProjects = projects.filter(
-    (project) => project.category === selectedCategory
+  const currentCategory = projectCategories.find(
+    (cat) => cat.name === selectedCategory
   );
+  const filteredProjects = currentCategory?.projects || [];
 
   return (
     <section className="px-4 md:px-20 py-16 mt-24">
@@ -170,30 +32,30 @@ const AllProjectsSection = () => {
           <h4 className="text-sm uppercase tracking-widest text-gray-500 mb-2">
             Projects
           </h4>
-          <h2 className="text-3xl font-bold mb-6">Our all Projects</h2>
+          <h2 className="text-3xl font-bold mb-6">Our All Projects</h2>
           <div>
             <h5 className="uppercase text-xs font-medium text-gray-500 mb-4">
-              Popular Categories
+              Categories
             </h5>
             <ul className="space-y-2">
-              {categories.map((cat, index) => (
+              {projectCategories.map((cat, index) => (
                 <motion.li
                   key={index}
                   onClick={() => {
-                    setSelectedCategory(cat);
+                    setSelectedCategory(cat.name);
                     setVisibleProjects(6);
                   }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.4 }}
                   viewport={{ once: true }}
-                  className={`cursor-pointer px-3 py-1 border border-gray-200 hover:bg-black hover:text-white ${
-                    cat === selectedCategory
+                  className={`cursor-pointer px-3 py-2 border text-md ${
+                    selectedCategory === cat.name
                       ? "bg-black text-white"
-                      : "text-gray-700"
+                      : "border-gray-200 text-gray-600 hover:border-black"
                   }`}
                 >
-                  {cat}
+                  {cat.name}
                 </motion.li>
               ))}
             </ul>
@@ -214,7 +76,7 @@ const AllProjectsSection = () => {
                 <div className="cursor-pointer">
                   <div className="relative w-full h-[250px] overflow-hidden group">
                     <Image
-                      src={project.image}
+                      src={project.thumbnail}
                       alt={project.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -240,9 +102,7 @@ const AllProjectsSection = () => {
           ))}
         </div>
       </div>
-
-      {/* Load More Button */}
-      {visibleProjects < filteredProjects.length && (
+       {filteredProjects.length > visibleProjects && (
         <div className="flex justify-center mt-12">
           <button
             onClick={handleLoadMore}
@@ -250,8 +110,8 @@ const AllProjectsSection = () => {
           >
             Load More
           </button>
-        </div>
-      )}
+          </div>
+        )}
     </section>
   );
 };

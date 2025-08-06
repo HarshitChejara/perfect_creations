@@ -2,7 +2,17 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { projects } from "data/projectsData";
+import { projectCategories } from "data/projectsData";
+import { motion } from "framer-motion";
+
+const slideUpVariant = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" } as const,
+  },
+} as const;
 
 type ProjectDetailSectionProps = {
   slug: string;
@@ -13,8 +23,9 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({ slug }) => 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
-  // Find the project using slug
-  const project = projects.find((p) => p.slug === slug);
+  const project = projectCategories
+    .flatMap((category) => category.projects)
+    .find((p) => p.slug === slug);
 
   if (!project) {
     return <p className="text-center py-100">Project not found.</p>;
@@ -37,7 +48,13 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({ slug }) => 
   return (
     <section className="px-4 md:px-20 py-20 mx-auto mt-32">
       {/* Project Details */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:mb-16 mb-4">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={slideUpVariant}
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 md:mb-16 mb-4"
+      >
         <div>
           <h4 className="text-xs uppercase text-gray-500 tracking-widest mb-1">
             Project Detail
@@ -47,7 +64,7 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({ slug }) => 
         <div className="md:col-span-1 text-sm text-gray-600 leading-relaxed">
           <p>{project.description}</p>
         </div>
-        <div className="relative text-right z-60">
+        <div className="relative text-right z-10">
           <div className="flex justify-end">
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -81,11 +98,17 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({ slug }) => 
             </div>
           )}
         </div>
-      </div>
+      </motion.div>
 
       {/* Images or Videos */}
       {viewType === "images" ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={slideUpVariant}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {project.images.map((image, index) => (
             <div
               key={index}
@@ -98,10 +121,16 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({ slug }) => 
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {project.videos.map((video, index) => (
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={slideUpVariant}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {project.videos?.map((video, index) => (
             <div key={index} className="relative w-full h-[300px]">
               <video
                 src={video.src}
@@ -113,7 +142,7 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({ slug }) => 
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       )}
 
       {/* Fullscreen Image Viewer */}
