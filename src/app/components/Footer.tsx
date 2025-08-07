@@ -1,7 +1,7 @@
 'use client';
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import Link from 'next/link';
-import { motion, Variants } from 'framer-motion';
+import { Variants } from 'framer-motion';
 import Image from 'next/image';
 
 const slideUpVariant: Variants = {
