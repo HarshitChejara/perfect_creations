@@ -1,17 +1,17 @@
 'use client';
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import Link from 'next/link';
-import { Variants } from 'framer-motion';
+// import { Variants } from 'framer-motion';
 import Image from 'next/image';
 
-const slideUpVariant: Variants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] }
-  },
-};
+// const slideUpVariant: Variants = {
+//   hidden: { opacity: 0, y: 50 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] }
+//   },
+// };
 
 const Footer = () => {
   return (
