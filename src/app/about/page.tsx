@@ -28,9 +28,9 @@ const About = () => {
           {/* LEFT COLUMN */}
           <div className="relative w-full h-full md:min-h-[400px]">
             {/* Titles - Top Left */}
-            <div className="md:absolute md:top-0 md:left-0 p-4">
+            <div className="md:absolute md:top-0 md:left-0 md:p-4 mb-5">
               <motion.p
-                className="tracking-widest text-sm mb-2 md:mb-4"
+                className="tracking-widest text-sm mb-2 text-gray-500"
                 variants={slideUp}
                 initial="hidden"
                 whileInView="visible"
@@ -41,7 +41,7 @@ const About = () => {
               </motion.p>
 
               <motion.h1
-                className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 md:mb-8"
+                className="text-4xl md:text-5xl font-bold leading-tight mb-4 md:mb-8"
                 variants={slideUp}
                 initial="hidden"
                 whileInView="visible"
@@ -54,7 +54,7 @@ const About = () => {
 
             {/* 2D Designer Block - Bottom Left */}
             <motion.div
-              className="md:absolute md:bottom-0 md:left-0 w-full md:w-2/3 p-4 mt-4 md:mt-0"
+              className="md:absolute md:bottom-0 md:left-0 w-full md:w-2/3 md:p-4 mt-4 md:mt-0"
               variants={slideUp}
               initial="hidden"
               whileInView="visible"
@@ -64,7 +64,7 @@ const About = () => {
               <h3 className="font-semibold text-lg">2D Designer</h3>
               <p className="text-sm text-gray-600 mt-2">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry’s standard dummy text.
+                Lorem Ipsum has been the industrys standard dummy text.
               </p>
             </motion.div>
           </div>
@@ -82,7 +82,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <Image
-                src="/video-thumb.png"
+                src="/about/video-thumb.png"
                 alt="Video Process"
                 fill
                 className="object-cover"
@@ -101,7 +101,7 @@ const About = () => {
 
             {/* 3D Designer Block - Bottom Left */}
             <motion.div
-              className="md:absolute md:bottom-0 md:left-0 w-full md:w-2/3 p-4"
+              className="md:absolute md:bottom-0 md:left-0 w-full md:w-2/3 md:p-4"
               variants={slideUp}
               initial="hidden"
               whileInView="visible"
@@ -120,7 +120,7 @@ const About = () => {
           <div>
             {/* Description */}
             <motion.div
-              className="bg-[#f9f9f9] p-6 mb-6 md:mb-0"
+              className="bg-[#f9f9f9] p-6 md:mb-0"
               variants={slideUp}
               initial="hidden"
               whileInView="visible"
@@ -130,7 +130,7 @@ const About = () => {
               <h2 className="text-xl md:text-2xl font-semibold">Lorem ipsum dummy text</h2>
               <p className="text-sm text-gray-600 mt-2 md:mb-8">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry’s standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industrys standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               </p>
             </motion.div>
 
@@ -144,7 +144,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <Image
-                src="/about_image.png"
+                src="/about/about_image.png"
                 alt="Office Design"
                 fill
                 className="object-cover"

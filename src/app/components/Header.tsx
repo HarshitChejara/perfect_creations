@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -10,6 +10,7 @@ const Header = () => {
   const pathname = usePathname();
   const isHome = pathname === '/';
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -26,16 +27,27 @@ const Header = () => {
       ? 'underline underline-offset-4 font-semibold'
       : 'hover:opacity-80';
 
+  // Scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <header
-      className={`absolute top-0 left-0 w-full z-50 px-6 md:px-20 py-6 flex items-center justify-between ${
-        isHome ? 'text-white' : 'text-black'
+      className={`fixed top-0 left-0 w-full z-50 px-4 md:px-20 py-6 flex items-center justify-between transition-all duration-300 ${
+        isHome && !scrolled ? 'bg-transparent text-white' : 'bg-white text-black'
       }`}
     >
       {/* Logo */}
       <div className="relative w-32 h-10">
         <Image
-          src={isHome ? '/white_logo.png' : '/dark_logo.png'}
+          src={
+            isHome && !scrolled ? '/white_logo.png' : '/dark_logo.png'
+          }
           alt="Logo"
           fill
           className="object-contain"
@@ -52,11 +64,7 @@ const Header = () => {
       </nav>
 
       {/* Mobile Menu Button */}
-      <button
-        onClick={toggleMenu}
-        className="md:hidden"
-        aria-label="Toggle menu"
-      >
+      <button onClick={toggleMenu} className="md:hidden" aria-label="Toggle menu">
         {menuOpen ? (
           <X size={24} className="text-black" />
         ) : (
@@ -67,8 +75,7 @@ const Header = () => {
       {/* Mobile Nav Menu */}
       {menuOpen && (
         <div className="fixed top-0 left-0 w-full h-full bg-white text-black z-40">
-          {/* Top bar: Logo + Close */}
-          <div className="flex items-center justify-between px-6 py-6">
+          <div className="flex items-center justify-between px-4 py-6">
             <div className="relative w-32 h-10">
               <Image
                 src="/dark_logo.png"
@@ -82,8 +89,7 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Mobile Nav Links */}
-          <div className="flex flex-col items-start gap-6 text-lg mt-10 px-6">
+          <div className="flex flex-col items-start gap-6 text-lg mt-10 px-4">
             {navLinks.map(({ name, path }) => (
               <Link
                 key={path}

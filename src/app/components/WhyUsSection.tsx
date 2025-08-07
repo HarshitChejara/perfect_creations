@@ -14,17 +14,17 @@ const contentData = [
   {
     title: 'Experience',
     description: 'Gain hands-on experience through real-world projects and mentorship.',
-    image: '/workspace1.jpeg',
+    image: '/hero-bg.jpeg',
   },
   {
     title: 'Learning',
     description: 'Engage in continuous learning with industry-leading professionals.',
-    image: '/workspace2.jpeg',
+    image: '/hero-bg-2.jpg',
   },
   {
     title: 'Community',
     description: 'Join a thriving community of learners, mentors, and professionals.',
-    image: '/workspace3.jpeg',
+    image: '/hero-bg-3.jpeg',
   },
   {
     title: 'Job Training',

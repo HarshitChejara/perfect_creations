@@ -9,14 +9,14 @@ const slideUpVariant: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] } // cubic-bezier for easeOut
+    transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] }
   },
 };
 
 const ContactSection = () => {
   return (
-    <section className="w-full px-6 md:px-20 mb-12 mt-24">
-      <div className="flex flex-col lg:flex-row gap-10">
+    <section className="w-full px-4 md:px-20 md:mb-16 md:mt-24 mt-20">
+      <div className="flex flex-col lg:flex-row gap-10 justify-center items-center">
         {/* Left: Contact Form */}
         <motion.div
           className="lg:w-1/3"
@@ -25,8 +25,8 @@ const ContactSection = () => {
           viewport={{ once: true, amount: 0.2 }}
           variants={slideUpVariant}
         >
-          <p className="uppercase tracking-widest text-sm text-gray-500 mb-2">Get in Touch</p>
-          <h2 className="text-4xl font-bold mb-4">Contact us</h2>
+          <p className="uppercase tracking-widest text-sm text-gray-500 mb-2">Contact us</p>
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4">Get in Touch</h2>
           <p className="text-gray-600 mb-6">
             If you have any question about our process or company? Let us know how we can help you.
           </p>
@@ -49,7 +49,7 @@ const ContactSection = () => {
             ></textarea>
             <button
               type="submit"
-              className="bg-black text-white border border-black hover:bg-white hover:text-black px-4 py-2 text-sm rounded-full hover:bg-gray-800 transition uppercase"
+              className="cursor-pointer bg-black text-white border border-black hover:bg-white hover:text-black px-4 py-2 text-sm rounded-full hover:bg-gray-800 transition uppercase"
             >
               Submit
             </button>
@@ -58,14 +58,14 @@ const ContactSection = () => {
 
         {/* Right: Contact Info and Map */}
         <motion.div
-          className="lg:w-2/3 flex flex-col lg:flex-row gap-8 bottom-0 h-full"
+          className="lg:w-2/3 flex flex-col lg:flex-row gap-8 h-full"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={slideUpVariant}
         >
           {/* Contact Info */}
-          <div className="w-full lg:w-1/3 space-y-6 px-4">
+          <div className="w-full h-full lg:w-1/3 space-y-5 md:px-4 mb-3 flex flex-col justify-between">
             <motion.div className="flex items-start gap-3" variants={slideUpVariant}>
               <div className="w-6 h-6 flex items-center justify-center">
                 <FaMapMarkerAlt className="text-black text-lg" />
@@ -77,6 +77,7 @@ const ContactSection = () => {
                 </p>
               </div>
             </motion.div>
+            <motion.div className="border-t border-gray-300" variants={slideUpVariant} />
 
             <motion.div className="flex items-start gap-3" variants={slideUpVariant}>
               <div className="w-6 h-6 flex items-center justify-center">
@@ -87,6 +88,7 @@ const ContactSection = () => {
                 <p className="text-gray-600">10 am - 07 pm</p>
               </div>
             </motion.div>
+            <motion.div className="border-t border-gray-300" variants={slideUpVariant} />
 
             <motion.div className="flex items-start gap-3" variants={slideUpVariant}>
               <div className="w-6 h-6 flex items-center justify-center">
@@ -97,6 +99,7 @@ const ContactSection = () => {
                 <p className="text-gray-600">+91 9712973274</p>
               </div>
             </motion.div>
+            <motion.div className="border-t border-gray-300" variants={slideUpVariant} />
 
             <motion.div className="flex items-start gap-3" variants={slideUpVariant}>
               <div className="w-6 h-6 flex items-center justify-center">
@@ -111,11 +114,8 @@ const ContactSection = () => {
 
 
           {/* Map */}
-          <motion.div
-            className="w-full lg:w-2/3"
-            variants={slideUpVariant}
-          >
-            <div className="relative w-full aspect-video">
+          <motion.div className="w-full h-full lg:w-2/3" variants={slideUpVariant} >
+            <div className="relative w-full h-full md:h-[390] aspect-video">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1860.4982978792436!2d72.77502593558214!3d21.15253376410681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04d16a742bedd%3A0xbf8c9a2f812cbd4!2sSheetal%27s%20Perfect%20Creations!5e0!3m2!1sen!2sin!4v1754293226767!5m2!1sen!2sin"
                 className="absolute top-0 bottom-0 left-0 w-full h-full"

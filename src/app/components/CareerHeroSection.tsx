@@ -13,10 +13,10 @@ const slideUpVariant: Variants = {
 
 const CareerHeroSection = () => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-4 md:px-20 mb-16 mt-44">
+    <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-4 md:px-20 mb-16 md:mb-24 mt-44">
       {/* Left Column */}
       <motion.div
-        className="flex flex-col justify-between"
+        className="flex flex-col justify-between md:mt-4"
         variants={slideUpVariant}
         initial="hidden"
         whileInView="visible"
@@ -24,7 +24,7 @@ const CareerHeroSection = () => {
       >
         <div>
           <p className="uppercase tracking-widest text-sm mb-2 text-gray-600">Careers</p>
-          <h1 className="text-4xl font-bold mb-4">Build with us</h1>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">Build with us</h1>
           <p className="text-gray-600 max-w-md">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text.
           </p>
@@ -47,7 +47,7 @@ const CareerHeroSection = () => {
         viewport={{ once: true, amount: 0.2 }}
       >
         <Image
-          src="/office.jpeg"
+          src="/career/office.jpeg"
           alt="Office"
           width={500}
           height={200}
@@ -94,7 +94,7 @@ const CareerHeroSection = () => {
           />
           <button
             type="submit"
-            className="bg-black text-white border border-black hover:bg-white hover:text-black px-4 py-2 text-sm rounded-full hover:bg-gray-800 transition uppercase"
+            className="cursor-pointer bg-black text-white border border-black hover:bg-white hover:text-black px-4 py-2 text-sm rounded-full hover:bg-gray-800 transition uppercase"
           >
             Submit
           </button>

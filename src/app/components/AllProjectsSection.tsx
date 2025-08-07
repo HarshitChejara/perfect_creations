@@ -19,11 +19,11 @@ const AllProjectsSection = () => {
   const filteredProjects = currentCategory?.projects || [];
 
   return (
-    <section className="px-4 md:px-20 py-16 mt-24">
+    <section className="px-4 md:px-20 py-4 md:mt-44 mt-40 md:mb-0 mb-10">
       <div className="flex flex-col md:flex-row gap-8">
         {/* Left Sidebar */}
         <motion.aside
-          className="md:w-1/4 mb-10 md:mb-0"
+          className="md:w-1/4 md:mb-10 md:mb-0"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -32,9 +32,9 @@ const AllProjectsSection = () => {
           <h4 className="text-sm uppercase tracking-widest text-gray-500 mb-2">
             Projects
           </h4>
-          <h2 className="text-3xl font-bold mb-6">Our All Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">Our Projects</h2>
           <div>
-            <h5 className="uppercase text-xs font-medium text-gray-500 mb-4">
+            <h5 className="uppercase text-sm font-medium text-gray-500 mb-4">
               Categories
             </h5>
             <ul className="space-y-2">
@@ -84,7 +84,7 @@ const AllProjectsSection = () => {
                     <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/40 transition-all duration-300">
                       <button
                         type="button"
-                        className="opacity-0 group-hover:opacity-100 border text-white border-white rounded-full px-4 py-2 text-sm uppercase hover:bg-white hover:text-black transition-all duration-300"
+                        className="cursor-pointer opacity-0 group-hover:opacity-100 border text-white border-white rounded-full px-4 py-2 text-sm uppercase hover:bg-white hover:text-black transition-all duration-300"
                       >
                         View Project
                       </button>
@@ -103,10 +103,10 @@ const AllProjectsSection = () => {
         </div>
       </div>
        {filteredProjects.length > visibleProjects && (
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center py-12">
           <button
             onClick={handleLoadMore}
-            className="bg-black text-white border border-black hover:bg-white hover:text-black px-4 py-2 text-sm rounded-full transition uppercase"
+            className="cursor-pointer bg-black text-white border border-black hover:bg-white hover:text-black px-4 py-2 text-sm rounded-full transition uppercase"
           >
             Load More
           </button>

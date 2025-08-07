@@ -14,7 +14,7 @@ const projectsData = [
       'A luxurious villa project featuring cutting-edge architecture and a serene environment.',
     area: '120 m²',
     year: '2024',
-    images: ['/project1.png', '/project2.png', '/project3.png', '/project4.png'],
+    images: ['/project/project1.png', '/project/project2.png', '/project/project3.png', '/project/project4.png'],
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const projectsData = [
       'High-rise apartment complex with premium amenities for city living.',
     area: '85 m²',
     year: '2025',
-    images: ['/project5.jpg', '/project6.jpg', '/project7.jpg', '/project5.jpg'],
+    images: ['/project/project5.jpg', '/project/project6.jpg', '/project/project7.jpg', '/project/project5.jpg'],
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const projectsData = [
       'A countryside cottage designed for peaceful and minimal living.',
     area: '65 m²',
     year: '2023',
-    images: ['/project8.jpeg', '/project9.jpeg', '/project10.jpeg', '/project11.jpeg'],
+    images: ['/project/project8.jpeg', '/project/project9.jpeg', '/project/project10.jpeg', '/project/project11.jpeg'],
   },
 ];
 
@@ -71,7 +71,7 @@ const ProjectsSection = () => {
   return (
     <section ref={ref} className="w-full px-4 md:px-20 md:py-24 py-12 bg-white relative overflow-hidden">
       {/* Header */}
-      <div className="mb-10">
+      <div className="md:mb-10 mb-6">
         <motion.p
           variants={slideUpVariants}
           initial="hidden"
@@ -87,7 +87,7 @@ const ProjectsSection = () => {
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.4 }}
-          className="text-4xl font-bold mt-2"
+          className="md:text-4xl text-3xl font-bold mt-2"
         >
           Projects
         </motion.h2>
@@ -171,10 +171,10 @@ const ProjectsSection = () => {
         {/* Navigation Buttons */}
         <div className="absolute -bottom-0 right-0 flex gap-4">
           <button onClick={handlePrev}>
-            <FiChevronLeft size={40} />
+            <FiChevronLeft size={40} className="cursor-pointer"/>
           </button>
           <button onClick={handleNext}>
-            <FiChevronRight size={40} />
+            <FiChevronRight size={40} className="cursor-pointer"/>
           </button>
         </div>
       </div>
@@ -234,10 +234,10 @@ const ProjectsSection = () => {
         {/* Mobile Navigation */}
         <div className="absolute bottom-0 right-0 flex gap-4">
           <button onClick={handlePrev}>
-            <FiChevronLeft size={40} />
+            <FiChevronLeft size={40} className="cursor-pointer"/>
           </button>
           <button onClick={handleNext}>
-            <FiChevronRight size={40} />
+            <FiChevronRight size={40} className="cursor-pointer"/>
           </button>
         </div>
       </div>

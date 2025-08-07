@@ -18,43 +18,43 @@ const categories = [
 
 const projectImages = [
   {
-    image: '/showcase_project1.png',
+    image: '/about/showcase/showcase_project1.png',
     client: 'Name Of Project Client1',
     description: 'The interior of the apartments.',
     category: 'Architecture',
   },
   {
-    image: '/showcase_project2.png',
+    image: '/about/showcase/showcase_project2.png',
     client: 'Name Of Project Client2',
     description: 'Modern open space design.',
     category: 'Organization',
   },
   {
-    image: '/showcase_project3.png',
+    image: '/about/showcase/showcase_project3.png',
     client: 'Name Of Project Client3',
     description: 'Cozy and minimal office setup.',
     category: 'Furniture',
   },
   {
-    image: '/showcase_project1.png',
+    image: '/about/showcase/showcase_project1.png',
     client: 'Name Of Project Client4',
     description: 'The interior of the apartments.',
     category: 'Remote Spaces',
   },
   {
-    image: '/showcase_project2.png',
+    image: '/about/showcase/showcase_project2.png',
     client: 'Name Of Project Client5',
     description: 'Modern open space design.',
     category: 'Interior Design',
   },
   {
-    image: '/showcase_project3.png',
+    image: '/about/showcase/showcase_project3.png',
     client: 'Name Of Project Client6',
     description: 'Cozy and minimal office setup.',
     category: 'Office Tech',
   },
   {
-    image: '/showcase_project2.png',
+    image: '/about/showcase/showcase_project2.png',
     client: 'Name Of Project Client7',
     description: 'The interior of the apartments.',
     category: 'Floor Plans',
@@ -89,10 +89,10 @@ const ProjectsShowcase = () => {
   const activeCategory = projectImages[currentIndex].category;
 
   return (
-    <section className="px-6 md:px-20 py-20 md:mb-20 bg-white text-black">
+    <section className="px-4 md:px-20 py-20 md:mb-20 bg-white text-black">
       {/* Title Section */}
       <motion.p
-        className="uppercase text-sm tracking-widest mb-2"
+        className="uppercase text-sm tracking-widest mb-2 text-gray-500"
         variants={slideUpVariant}
         initial="hidden"
         whileInView="visible"
@@ -103,7 +103,7 @@ const ProjectsShowcase = () => {
 
       <div className="flex items-center justify-between mb-12">
         <motion.h2
-          className="text-4xl font-bold"
+          className="md:text-4xl text-3xl font-bold"
           variants={slideUpVariant}
           initial="hidden"
           whileInView="visible"
@@ -123,9 +123,9 @@ const ProjectsShowcase = () => {
         >
           <button
             onClick={() => router.push('/projects')}
-            className="bg-black text-white border border-black hover:bg-white hover:text-black uppercase px-4 py-2 text-sm rounded-full hover:opacity-90"
+            className="cursor-pointer bg-black text-white border border-black hover:bg-white hover:text-black uppercase px-4 py-2 text-sm rounded-full hover:opacity-90"
           >
-            Learn about inside
+            Learn more
           </button>
         </motion.div>
       </div>
@@ -189,10 +189,10 @@ const ProjectsShowcase = () => {
           {/* Arrows */}
           <div className="absolute right-0 flex gap-4">
             <button onClick={prevSlide}>
-              <FiChevronLeft size={40} />
+              <FiChevronLeft size={40} className="cursor-pointer"/>
             </button>
             <button onClick={nextSlide}>
-              <FiChevronRight size={40} />
+              <FiChevronRight size={40} className="cursor-pointer"/>
             </button>
           </div>
         </div>

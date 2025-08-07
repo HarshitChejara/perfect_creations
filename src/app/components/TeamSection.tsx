@@ -17,25 +17,25 @@ const teamMembers = [
   {
     name: 'Name of member',
     title: 'CEO',
-    image: '/team1.png',
+    image: '/about/team/team1.png',
   },
   {
     name: 'Name of member',
     title: 'CEO',
-    image: '/team2.png',
+    image: '/about/team/team2.png',
   },
   {
     name: 'Name of member',
     title: 'CEO',
-    image: '/team3.png',
+    image: '/about/team/team3.png',
   },
 ];
 
 const TeamSection = () => {
   return (
-    <section className="px-6 md:px-20 py-20 bg-white text-black">
+    <section className="px-4 md:px-20 py-20 bg-white text-black">
       <motion.p
-        className="uppercase text-sm tracking-widest mb-2"
+        className="uppercase text-sm tracking-widest mb-2 text-gray-500"
         variants={slideUpVariant}
         initial="hidden"
         whileInView="visible"
@@ -45,7 +45,7 @@ const TeamSection = () => {
       </motion.p>
 
       <motion.h2
-        className="text-4xl font-bold mb-12"
+        className="md:text-4xl text-3xl font-bold mb-12"
         variants={slideUpVariant}
         initial="hidden"
         whileInView="visible"

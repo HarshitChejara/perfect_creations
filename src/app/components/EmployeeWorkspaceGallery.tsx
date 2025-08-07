@@ -12,9 +12,9 @@ const slideUpVariant: Variants = {
 };
 
 const images = [
-  { src: "/workspace1.jpeg", alt: "Employee Workspace 1", title: "Meeting Workspace" },
-  { src: "/workspace2.jpeg", alt: "Employee Workspace 2", title: "Employee Workspace" },
-  { src: "/workspace3.jpeg", alt: "Employee Workspace 3", title: "Waiting Workspace" },
+  { src: "/career/workspace1.jpeg", alt: "Employee Workspace 1", title: "Meeting Workspace" },
+  { src: "/career/workspace2.png", alt: "Employee Workspace 2", title: "Employee Workspace" },
+  { src: "/career/workspace3.jpeg", alt: "Employee Workspace 3", title: "Waiting Workspace" },
 ];
 
 const EmployeeWorkspaceGallery = () => {

@@ -8,7 +8,7 @@ const ExploreProjectsSection = () => {
 
   return (
     <motion.section
-      className="relative w-full px-6 md:px-20 py-20"
+      className="relative w-full px-4 md:px-20 md:py-20 md:mt-0 mt-36 md:mb-0 mb-14"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -17,7 +17,7 @@ const ExploreProjectsSection = () => {
       {/* Background image */}
       <div className="relative h-[400px] w-full">
         <Image
-          src="/office_space.jpeg"
+          src="/contact/explore_projects.jpeg"
           alt="Explore Projects"
           fill
           className="object-cover"
@@ -31,12 +31,12 @@ const ExploreProjectsSection = () => {
           <p className="uppercase tracking-widest text-sm mb-2">
             Explore our work
           </p>
-          <h2 className="text-3xl md:text-5xl font-semibold mb-4">
+          <h2 className="text-4xl md:text-5xl font-semibold mb-4">
             See what we can do <span className="text-primary">together.</span>
           </h2>
           <button
               type="submit" onClick={() => router.push('/projects')}
-              className="border border-white rounded-full px-4 py-2 text-sm uppercase hover:bg-white hover:text-black transition-all whitespace-nowrap w-fit"
+              className="cursor-pointer border border-white rounded-full px-4 py-2 text-sm uppercase hover:bg-white hover:text-black transition-all whitespace-nowrap w-fit"
             >
               View All Projects
             </button>

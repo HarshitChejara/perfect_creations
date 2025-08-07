@@ -6,26 +6,26 @@ import { motion, Variants } from 'framer-motion';
 
 const testimonials = [
   {
-    image: '/testimonial1.jpg',
+    image: '/testimonials/testimonial1.jpg',
     quote:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat venenatis tempor, turpis dolor. Aliquam faucibus velit, volutpat vulputate risus. Urna enim donec sed fringilla blandit arcu mi quam semper nunc.',
-    clientImage: '/client-avatar.png',
+    clientImage: '/testimonials/clients/client-avatar.png',
     clientName: 'Name Of Project / Client',
     clientTitle: 'CEO, Unity Real Estate',
   },
   {
-    image: '/testimonial1.jpg',
+    image: '/testimonials/testimonial1.jpg',
     quote:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat venenatis tempor, turpis dolor. Aliquam faucibus velit, volutpat vulputate risus. Urna enim donec sed fringilla blandit arcu mi quam semper nunc.',
-    clientImage: '/client-avatar.png',
+    clientImage: '/testimonials/clients/client-avatar.png',
     clientName: 'Name Of Project / Client',
     clientTitle: 'CEO, Unity Real Estate',
   },
   {
-    image: '/testimonial1.jpg',
+    image: '/testimonials/testimonial1.jpg',
     quote:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat venenatis tempor, turpis dolor. Aliquam faucibus velit, volutpat vulputate risus. Urna enim donec sed fringilla blandit arcu mi quam semper nunc.',
-    clientImage: '/client-avatar.png',
+    clientImage: '/testimonials/clients/client-avatar.png',
     clientName: 'Name Of Project / Client',
     clientTitle: 'CEO, Unity Real Estate',
   },
@@ -64,7 +64,7 @@ const Testimonials = () => {
       <div className="relative px-4 md:px-20">
         {/* Mobile Title */}
         <div className="mb-8 md:hidden">
-          <p className="text-xs tracking-widest uppercase text-gray-500 mb-1">
+          <p className="text-sm tracking-widest uppercase text-gray-500 mb-1">
             What Clients Says
           </p>
           <h2 className="text-3xl font-bold text-gray-900">Testimonials</h2>
@@ -95,7 +95,7 @@ const Testimonials = () => {
               <div className="w-full md:w-1/2 md:pl-16 mt-10 md:mt-0">
                 {/* Desktop Title */}
                 <div className="hidden md:block mb-12">
-                  <p className="text-xs tracking-widest uppercase text-gray-500 mb-2">
+                  <p className="text-sm tracking-widest uppercase text-gray-500 mb-2">
                     What Clients Says
                   </p>
                   <h2 className="text-4xl font-bold text-gray-900">
@@ -131,10 +131,10 @@ const Testimonials = () => {
                 </div>
                 <div className="absolute right-4 flex gap-4 py-8 px-4 md:px-20">
                   <button onClick={() => handleScroll('left')}>
-                    <FiChevronLeft size={40} />
+                    <FiChevronLeft size={40} className="cursor-pointer"/>
                   </button>
                   <button onClick={() => handleScroll('right')}>
-                    <FiChevronRight size={40} />
+                    <FiChevronRight size={40} className="cursor-pointer"/>
                   </button>
                 </div>
               </div>

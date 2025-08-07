@@ -33,7 +33,7 @@ const FaqSection = () => {
   });
 
   return (
-    <section className="px-6 md:px-20 py-20 md:mb-16 mb-5 w-full">
+    <section className="px-4 md:px-20 py-20 md:mb-16 mb-5 w-full">
       <motion.p
         className="uppercase tracking-widest text-sm text-gray-500 mb-2"
         initial={{ opacity: 0, y: 30 }}
@@ -45,7 +45,7 @@ const FaqSection = () => {
       </motion.p>
 
       <motion.h2
-        className="text-4xl font-bold mb-10"
+        className="md:text-4xl text-3xl font-bold mb-10"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}

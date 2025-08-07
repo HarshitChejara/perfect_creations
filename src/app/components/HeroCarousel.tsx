@@ -48,7 +48,7 @@ const HeroCarousel = () => {
       <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col h-full justify-center px-6 md:px-20 text-white">
+      <div className="relative z-10 flex flex-col h-full justify-center px-4 md:px-20 text-white">
         {/* Heading with Slide-Up */}
         <motion.h1
           className="text-4xl md:text-6xl font-semibold leading-tight max-w-xl"
@@ -63,7 +63,7 @@ const HeroCarousel = () => {
         {/* Button with Slide-Up */}
         <motion.button
           onClick={() => router.push('/contact')} // ✅ Navigate to contact page
-          className="mt-8 border border-white rounded-full px-4 py-2 text-sm uppercase hover:bg-white hover:text-black transition-all whitespace-nowrap w-fit"
+          className="cursor-pointer mt-8 border border-white rounded-full px-4 py-2 text-sm uppercase hover:bg-white hover:text-black transition-all whitespace-nowrap w-fit"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

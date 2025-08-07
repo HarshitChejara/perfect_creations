@@ -11,17 +11,17 @@ const Contact = () => {
       ref={sectionRef}
       className="min-h-screen flex items-center bg-cover bg-center"
       style={{
-        backgroundImage: "url('/contact-bg.png')", // Replace with your image path
+        backgroundImage: "url('/contact/contact-bg.png')", // Replace with your image path
       }}
     >
-      <div className="relative z-10 md:px-20 px-5 py-16 flex flex-col md:flex-row items-center">
+      <div className="relative z-10 md:px-20 px-4 py-16 flex flex-col md:flex-row items-center">
         {/* Left Section */}
-        <div className="w-full text-white space-y-6">
+        <div className="w-full text-white">
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="tracking-widest text-sm uppercase"
+            className="tracking-widest text-sm uppercase mb-2"
           >
             Get in Touch
           </motion.p>
@@ -30,7 +30,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl font-bold"
+            className="md:text-4xl text-3xl font-bold"
           >
             Contact Us
           </motion.h2>
@@ -39,7 +39,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg"
+            className="text-lg mt-6 mb-3"
           >
             If you have any question about our process or company? Let us know how we can help you.
           </motion.p>
@@ -69,7 +69,7 @@ const Contact = () => {
             ></textarea>
             <button
               type="submit"
-              className="mt-2 border border-white rounded-full px-4 py-2 text-sm uppercase hover:bg-white hover:text-black transition-all whitespace-nowrap w-fit"
+              className="cursor-pointer mt-2 border border-white rounded-full px-4 py-2 text-sm uppercase hover:bg-white hover:text-black transition-all whitespace-nowrap w-fit"
             >
               Submit
             </button>

@@ -42,7 +42,7 @@ const ProfileSection = () => {
         {/* Left Image */}
         <motion.div className="w-full h-[400px] relative" variants={slideUp}>
           <Image
-            src="/profile.png"
+            src="/about/profile.png"
             alt="Sheetal Sharma"
             layout="fill"
             objectFit="cover"
@@ -51,13 +51,13 @@ const ProfileSection = () => {
 
         {/* Center Text */}
         <motion.div
-          className="text-center md:text-left flex flex-col justify-center"
+          className="text-left flex flex-col justify-center"
           variants={slideUp}
         >
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="md:text-4xl text-3xl font-bold mb-4">
             Sheetal<br />Sharma
           </h2>
-          <p className="uppercase text-xs tracking-widest">Interior Designer, Surat</p>
+          <p className="uppercase text-sm tracking-widest text-gray-500">Interior Designer, Surat</p>
         </motion.div>
 
         {/* Right Description + Video */}

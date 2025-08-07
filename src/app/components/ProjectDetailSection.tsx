@@ -46,7 +46,7 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({ slug }) => 
   };
 
   return (
-    <section className="px-4 md:px-20 py-20 mx-auto mt-32">
+    <section className="px-4 md:px-20 py-20 mx-auto md:mt-28 mt-24">
       {/* Project Details */}
       <motion.div
         initial="hidden"
@@ -56,10 +56,10 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({ slug }) => 
         className="grid grid-cols-1 md:grid-cols-3 gap-8 md:mb-16 mb-4"
       >
         <div>
-          <h4 className="text-xs uppercase text-gray-500 tracking-widest mb-1">
+          <h4 className="text-sm uppercase text-gray-500 tracking-widest mb-2">
             Project Detail
           </h4>
-          <h1 className="text-4xl font-bold capitalize">{project.title}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight capitalize">{project.title}</h1>
         </div>
         <div className="md:col-span-1 text-sm text-gray-600 leading-relaxed">
           <p>{project.description}</p>
@@ -68,7 +68,7 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({ slug }) => 
           <div className="flex justify-end">
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="border border-gray-300 px-4 py-2 text-sm hover:bg-gray-100 w-32 flex justify-between"
+              className="cursor-pointer border border-gray-300 px-4 py-2 text-sm hover:bg-gray-100 w-32 flex justify-between"
             >
               <span>{viewType === "images" ? "Images" : "Videos"}</span>
               <span>▼</span>
@@ -82,7 +82,7 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({ slug }) => 
                   setViewType("images");
                   setDropdownOpen(false);
                 }}
-                className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                className="cursor-pointer block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
               >
                 Images
               </button>
@@ -91,7 +91,7 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({ slug }) => 
                   setViewType("videos");
                   setDropdownOpen(false);
                 }}
-                className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                className="cursor-pointer block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
               >
                 Videos
               </button>

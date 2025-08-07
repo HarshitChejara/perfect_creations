@@ -4,11 +4,11 @@ import { useState, useEffect, useRef } from 'react';
 import { FiArrowRight, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const items = [
-  { id: 1, title: 'Printing Office', image: '/work1.png' },
-  { id: 2, title: 'Printing Office', image: '/work2.jpeg' },
-  { id: 3, title: 'Printing Office', image: '/work3.jpeg' },
-  { id: 4, title: 'Printing Office', image: '/work4.jpeg' },
-  { id: 5, title: 'Printing Office', image: '/work1.png' },
+  { id: 1, title: 'Printing Office', image: '/project/work1.png' },
+  { id: 2, title: 'Printing Office', image: '/project/work2.jpeg' },
+  { id: 3, title: 'Printing Office', image: '/project/work3.jpeg' },
+  { id: 4, title: 'Printing Office', image: '/project/work4.jpeg' },
+  { id: 5, title: 'Printing Office', image: '/project/work1.png' },
 ];
 
 const RecentWorks = () => {
@@ -73,7 +73,7 @@ const RecentWorks = () => {
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
     >
-      <h2 className="text-3xl md:text-4xl font-bold mb-16">Recent Works</h2>
+      <h2 className="text-3xl md:text-4xl font-bold md:mb-16 mb-12">Recent Works</h2>
 
       <div className="relative">
         <div
@@ -132,10 +132,10 @@ const RecentWorks = () => {
         {/* Navigation Buttons */}
         <div className="absolute right-4 flex gap-4 py-8">
           <button onClick={handlePrev}>
-            <FiChevronLeft size={40} />
+            <FiChevronLeft size={40} className="cursor-pointer"/>
           </button>
           <button onClick={handleNext}>
-            <FiChevronRight size={40} />
+            <FiChevronRight size={40} className="cursor-pointer"/>
           </button>
         </div>
       </div>
