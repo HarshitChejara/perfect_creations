@@ -169,14 +169,20 @@ const ProjectsSection = () => {
         </AnimatePresence>
 
         {/* Navigation Buttons */}
-        <div className="absolute -bottom-0 right-0 flex gap-4">
+        <motion.div
+          variants={slideUpVariants}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.6 }}
+          className="absolute -bottom-0 right-0 flex gap-4"
+        >
           <button onClick={handlePrev}>
-            <FiChevronLeft size={40} className="cursor-pointer"/>
+            <FiChevronLeft size={40} className="cursor-pointer" />
           </button>
           <button onClick={handleNext}>
-            <FiChevronRight size={40} className="cursor-pointer"/>
+            <FiChevronRight size={40} className="cursor-pointer" />
           </button>
-        </div>
+        </motion.div>
       </div>
 
       {/* Mobile View */}
@@ -232,14 +238,20 @@ const ProjectsSection = () => {
         </AnimatePresence>
 
         {/* Mobile Navigation */}
-        <div className="absolute bottom-0 right-0 flex gap-4">
+        <motion.div
+          variants={slideUpVariants}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.6 }}
+          className="absolute bottom-0 right-0 flex gap-4"
+        >
           <button onClick={handlePrev}>
-            <FiChevronLeft size={40} className="cursor-pointer"/>
+            <FiChevronLeft size={40} className="cursor-pointer" />
           </button>
           <button onClick={handleNext}>
-            <FiChevronRight size={40} className="cursor-pointer"/>
+            <FiChevronRight size={40} className="cursor-pointer" />
           </button>
-        </div>
+        </motion.div>
       </div>
 
       {/* Fullscreen Image Viewer */}

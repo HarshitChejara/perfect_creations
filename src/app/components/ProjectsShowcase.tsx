@@ -90,7 +90,7 @@ const ProjectsShowcase = () => {
 
   return (
     <section className="px-4 md:px-20 py-20 md:mb-20 bg-white text-black">
-      {/* Title Section */}
+      {/* Title */}
       <motion.p
         className="uppercase text-sm tracking-widest mb-2 text-gray-500"
         variants={slideUpVariant}
@@ -101,7 +101,7 @@ const ProjectsShowcase = () => {
         Project Categories
       </motion.p>
 
-      <div className="flex items-center justify-between mb-12">
+      <div className="flex items-center justify-between mb-6 md:mb-12">
         <motion.h2
           className="md:text-4xl text-3xl font-bold"
           variants={slideUpVariant}
@@ -113,7 +113,7 @@ const ProjectsShowcase = () => {
           What’s new?
         </motion.h2>
 
-        {/* CTA Button */}
+        {/* CTA */}
         <motion.div
           variants={slideUpVariant}
           initial="hidden"
@@ -130,8 +130,32 @@ const ProjectsShowcase = () => {
         </motion.div>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 items-start">
-        {/* Left - Categories */}
+      {/* MOBILE: Horizontal Categories */}
+      <motion.div
+        className="md:hidden flex flex-wrap gap-4 scrollbar-hide"
+        variants={slideUpVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {categories.map((cat, index) => (
+          <p
+            key={index}
+            className={`text-md cursor-pointer ${
+              cat === activeCategory
+                ? "font-semibold text-black"
+                : "text-gray-400"
+            }`}
+          >
+            {cat}
+          </p>
+        ))}
+      </motion.div>
+
+
+      {/* DESKTOP Layout */}
+      <div className="hidden md:grid md:grid-cols-3 gap-8 items-start">
+        {/* Categories List */}
         <motion.div
           className="space-y-4"
           variants={slideUpVariant}
@@ -154,7 +178,7 @@ const ProjectsShowcase = () => {
           ))}
         </motion.div>
 
-        {/* Middle - Project Image */}
+        {/* Images Grid */}
         <div className="col-span-2 relative">
           <motion.div
             className="grid grid-cols-2 gap-4"
@@ -187,16 +211,70 @@ const ProjectsShowcase = () => {
           </motion.div>
 
           {/* Arrows */}
-          <div className="absolute right-0 flex gap-4">
+          <motion.div
+            className="absolute right-0 flex gap-4"
+            variants={slideUpVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: 0.5 }}
+          >
             <button onClick={prevSlide}>
-              <FiChevronLeft size={40} className="cursor-pointer"/>
+              <FiChevronLeft size={40} className="cursor-pointer" />
             </button>
             <button onClick={nextSlide}>
-              <FiChevronRight size={40} className="cursor-pointer"/>
+              <FiChevronRight size={40} className="cursor-pointer" />
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
+
+      {/* MOBILE Carousel */}
+      <motion.div
+        className="md:hidden relative mt-6"
+        variants={slideUpVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <div className="relative w-full h-72 overflow-hidden">
+          <Image
+            src={projectImages[currentIndex].image}
+            alt={projectImages[currentIndex].client}
+            fill
+            className="object-cover"
+          />
+        </div>
+        <motion.p
+          className="mt-3 font-semibold"
+          variants={slideUpVariant}
+          transition={{ delay: 0.1 }}
+        >
+          {projectImages[currentIndex].client}
+        </motion.p>
+        <motion.p
+          className="text-gray-500 text-sm"
+          variants={slideUpVariant}
+          transition={{ delay: 0.2 }}
+        >
+          {projectImages[currentIndex].description}
+        </motion.p>
+
+        {/* Arrows */}
+        <motion.div
+          className="absolute right-0 flex gap-4"
+          variants={slideUpVariant}
+          transition={{ delay: 0.3 }}
+        >
+          <button onClick={prevSlide}>
+            <FiChevronLeft size={40} className="cursor-pointer" />
+          </button>
+          <button onClick={nextSlide}>
+            <FiChevronRight size={40} className="cursor-pointer" />
+          </button>
+        </motion.div>
+      </motion.div>
+
     </section>
   );
 };
